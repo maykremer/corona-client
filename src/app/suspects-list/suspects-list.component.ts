@@ -15,12 +15,16 @@ export class SuspectsListComponent implements OnInit {
   constructor(public dialog: MatDialog, public apiService: ApireqsService) {}
 
   ngOnInit(): void {
-    this.apiService.getSuspectsByClinicId("3").subscribe((res: any) => {
+    this.apiService.getSuspectsByClinicId("1").subscribe((res: any) => {
       res.forEach((element: any) => {
-        this.suspects.push(element);
-      })
+        if(element["isColonelConfinment"] == true){
+          this.suspects.push(element);
+        }
+      });
     })
   }
+
+  
 
   openDialog(suspect) {
     this.dialog.open(MainComponent, { width: '80%' , data: { suspect: suspect }});

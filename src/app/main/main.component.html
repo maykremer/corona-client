@@ -136,15 +136,17 @@
       />
     </mat-form-field>
 
-      <mat-checkbox class="example-margin" [(ngModel)]="isClinicConfinement"
-        >אישור ליציאה מהבידוד</mat-checkbox
-      >
+      <mat-checkbox class="example-margin" 
+        [(ngModel)]="isClinicConfinement"
+        (change)="toggle($event)"
+        >אישור ליציאה מהבידוד
+      </mat-checkbox>
 
     <mat-form-field>
       <input matInput placeholder="הערות המרפאה" [(ngModel)]="clinicNotes" />
     </mat-form-field>
 
-    <button mat-raised-button color="primary">שלח</button>
+    <button (click)="UpdateSuspect()" mat-raised-button color="primary">שלח</button>
 
 </div>
 
