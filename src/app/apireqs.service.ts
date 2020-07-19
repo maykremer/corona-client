@@ -17,4 +17,8 @@ export class ApireqsService {
     return this.http.get(config.BASE_URL + config.GET_ALL_SUPSECTS);
   }
 
+  updateClinicSuspect(DocumentId, body){
+    return this.http.put(config.UPDATE(DocumentId), body);
+  }
+
 }

@@ -12,6 +12,7 @@ export interface Irequest {}
   styleUrls: ['./suspects-list.component.css'],
 })
 export class SuspectsListComponent implements OnInit {
+
   suspects: Array<{
     _id: string;
     suspectIdentityNumber: string;
@@ -38,6 +39,23 @@ export class SuspectsListComponent implements OnInit {
         this.suspects.push(element);
       });
     });
+
+  suspects: any = [];
+  ifHamal: boolean = false;
+  HamalSuspects: any = [];
+  clinicNum: string = "2";
+
+  constructor(public dialog: MatDialog, public apiService: ApireqsService) {}
+
+  ngOnInit(): void { 
+    if(this.clinicNum == "14"){
+      this.ifHamal = true;
+      this.GetAllSupHamal();
+    }
+    else{
+      this.GetSupByClinic();
+    } 
+
   }
 
   openDialog(suspect) {
@@ -74,5 +92,24 @@ export class SuspectsListComponent implements OnInit {
       }
     });
     this.excelService.exportAsExcelFile(this.data, 'suspect-list');
+  }
+
+  GetAllSupHamal(){
+    this.apiService.getAllSuspects().subscribe((res: any) => {
+      console.log(res);
+      res.forEach(element => {
+        this.suspects.push(element);
+      });
+    })
+  }
+
+  GetSupByClinic(){
+    this.apiService.getSuspectsByClinicId("3").subscribe((res: any) => {
+      res.forEach((element: any) => {
+        if(element["isColonelConfinment"] == true){
+          this.suspects.push(element);
+        }
+      });
+    });
   }
 }
