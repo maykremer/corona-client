@@ -10,23 +10,38 @@ import { ApireqsService } from '../apireqs.service';
 })
 export class SuspectsListComponent implements OnInit {
   suspects: Array<string> = [];
-
+  ifHamal: boolean = true;
+  HamalSuspects: any = [];
+  clinicNum: string;
 
   constructor(public dialog: MatDialog, public apiService: ApireqsService) {}
 
   ngOnInit(): void {
-    this.apiService.getSuspectsByClinicId("1").subscribe((res: any) => {
+    this.GetSupByClinic();
+    if(this.clinicNum == "14"){
+      this.GetAllSupHamal();
+    }
+  }
+
+  openDialog(suspect) {
+    this.dialog.open(MainComponent, { width: '80%' , data: { suspect: suspect }});
+  }
+
+  GetAllSupHamal(){
+    this.apiService.getAllSuspects().subscribe((res: any) => {
+      res.array.forEach(element => {
+        this.HamalSuspects.push(element);
+      });
+    })
+  }
+
+  GetSupByClinic(){
+    this.apiService.getSuspectsByClinicId("3").subscribe((res: any) => {
       res.forEach((element: any) => {
         if(element["isColonelConfinment"] == true){
           this.suspects.push(element);
         }
       });
-    })
-  }
-
-  
-
-  openDialog(suspect) {
-    this.dialog.open(MainComponent, { width: '80%' , data: { suspect: suspect }});
+    });
   }
 }

@@ -18,6 +18,7 @@ export class MainComponent implements OnInit {
   hamalNotes: string;
   isColoneConfinement: boolean = false;
   PutBody: any;
+  ifHamal: boolean = true;
 
   constructor(@Inject(MAT_DIALOG_DATA) public SuspectData: any, public apiService: ApireqsService) {}
 

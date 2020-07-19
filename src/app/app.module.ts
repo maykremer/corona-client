@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeaderComponent } from './header/header.component';
 import {MatIconModule} from '@angular/material/icon';
+import { HamalComponent } from './hamal/hamal.component';
 
 
 
@@ -26,6 +27,7 @@ import {MatIconModule} from '@angular/material/icon';
     MainComponent,
     SuspectsListComponent,
     HeaderComponent,
+    HamalComponent,
   ],
   imports: [
     BrowserModule,
