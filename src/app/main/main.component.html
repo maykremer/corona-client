@@ -143,7 +143,7 @@
       </mat-checkbox>
 
     <mat-form-field>
-      <input matInput placeholder="הערות המרפאה" [(ngModel)]="clinicNotes" />
+      <input matInput placeholder="הערות המרפאה" value="{{SuspectData.suspect.clinicNotes}}" [(ngModel)]="clinicNotes" />
     </mat-form-field>
 
     <button (click)="UpdateSuspect()" mat-raised-button color="primary">שלח</button>
