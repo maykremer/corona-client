@@ -1,7 +1,18 @@
-<h1 id= "main-title">בקשות לערעור</h1>
+
+<div *ngIf="ifHamal; else elseBlock">
+    <h1 id= "main-title"> חמל בקשות לערעור</h1>
 <mat-action-list *ngFor="let suspect of suspects">
     <button mat-list-item (click)="openDialog(suspect)">
         שם מלא: {{suspect.suspectLastName}}  {{suspect.suspectFirstName}}  תז: {{suspect.suspectIdentityNumber}}
     </button>
 </mat-action-list>
+</div>
 
+<ng-template #elseBlock>
+    <h1 id= "main-title">בקשות לערעור</h1>
+    <mat-action-list *ngFor="let suspect of suspects">
+        <button mat-list-item (click)="openDialog(suspect)">
+            שם מלא: {{suspect.suspectLastName}}  {{suspect.suspectFirstName}}  תז: {{suspect.suspectIdentityNumber}}
+        </button>
+    </mat-action-list>
+</ng-template>

@@ -9,18 +9,21 @@ import { ApireqsService } from '../apireqs.service';
   styleUrls: ['./suspects-list.component.css'],
 })
 export class SuspectsListComponent implements OnInit {
-  suspects: Array<string> = [];
-  ifHamal: boolean = true;
+  suspects: any = [];
+  ifHamal: boolean = false;
   HamalSuspects: any = [];
-  clinicNum: string;
+  clinicNum: string = "2";
 
   constructor(public dialog: MatDialog, public apiService: ApireqsService) {}
 
-  ngOnInit(): void {
-    this.GetSupByClinic();
+  ngOnInit(): void { 
     if(this.clinicNum == "14"){
+      this.ifHamal = true;
       this.GetAllSupHamal();
     }
+    else{
+      this.GetSupByClinic();
+    } 
   }
 
   openDialog(suspect) {
@@ -29,8 +32,9 @@ export class SuspectsListComponent implements OnInit {
 
   GetAllSupHamal(){
     this.apiService.getAllSuspects().subscribe((res: any) => {
-      res.array.forEach(element => {
-        this.HamalSuspects.push(element);
+      console.log(res);
+      res.forEach(element => {
+        this.suspects.push(element);
       });
     })
   }
