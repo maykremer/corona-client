@@ -1,16 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { ApireqsService } from '../apireqs.service';
+
+
 @Component({
   selector: 'app-suspects-list',
   templateUrl: './suspects-list.component.html',
   styleUrls: ['./suspects-list.component.css'],
 })
 export class SuspectsListComponent implements OnInit {
-  suspects: Array<string> = ['1', '2', '3', '4'];
+  suspects: Array<string> = [];
 
-  constructor(dialog: MatDialog) {}
+  constructor(public apiService: ApireqsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.apiService.getSuspectsByClinicId("3").subscribe((res: any) => {
+      console.log(res); 
+      res.forEach((element: any) => {
+        this.suspects.push(element);
+      })
+    })
+  }
 
   openDialog() {}
 }
