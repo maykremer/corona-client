@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
+// import { MatDialog } from '@angular/material';
 @Component({
   selector: 'app-suspects-list',
   templateUrl: './suspects-list.component.html',
@@ -8,7 +8,7 @@ import { MatDialog } from '@angular/material';
 export class SuspectsListComponent implements OnInit {
   suspects: Array<string> = ['1', '2', '3', '4'];
 
-  constructor(dialog: MatDialog) {}
+  constructor() {}
 
   ngOnInit(): void {}
 
