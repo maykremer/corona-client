@@ -8,6 +8,11 @@
 </mat-action-list>
 </div>
 
+  <section>
+    <button mat-raised-button (click)="exportAsExcel()">Excel</button>
+    </section>
+    
+
 <ng-template #elseBlock>
     <h1 id= "main-title">בקשות לערעור</h1>
     <mat-action-list *ngFor="let suspect of suspects">
