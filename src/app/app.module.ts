@@ -12,8 +12,9 @@ import { ReporterComponent } from './reporter/reporter.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { SuspectsListComponent } from './suspects-list/suspects-list.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatListModule} from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {MatListModule} from '@angular/material/list';
     MatCheckboxModule,
     MatCardModule,
     MatTableModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
