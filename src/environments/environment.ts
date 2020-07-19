@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  authenticatorURL: 'http://localhost:3000/auth',
+  authenticatorURL: '/auth',
   authenticationToken: 'kd-token'
 };
 
