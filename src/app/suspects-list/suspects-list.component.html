@@ -1,4 +1,7 @@
 <!-- <mat-card *ngFor="let suspect of suspects" >Simple card</mat-card> -->
+<h1 id= "main-title">רשימת חשודים בקורונה</h1>
+<mat-action-list>
+    <button *ngFor="let suspect of suspects" mat-list-item (click)="openDialog(suspect)"> {{suspect}} </button>
 <h1 id= "main-title"> רשימת חשודים בקורונה</h1>
 <mat-action-list *ngFor="let suspect of suspects">
     <button mat-list-item >

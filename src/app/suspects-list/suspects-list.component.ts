@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ApireqsService } from '../apireqs.service';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MainComponent } from '../main/main.component';
+import { SuspectComponent } from '../suspect/suspect.component';
 
+import { ApireqsService } from '../apireqs.service';
 
 @Component({
   selector: 'app-suspects-list',
@@ -10,7 +13,8 @@ import { ApireqsService } from '../apireqs.service';
 export class SuspectsListComponent implements OnInit {
   suspects: Array<string> = [];
 
-  constructor(public apiService: ApireqsService) {}
+
+  constructor(public dialog: MatDialog, public apiService: ApireqsService) {}
 
   ngOnInit(): void {
     this.apiService.getSuspectsByClinicId("3").subscribe((res: any) => {
@@ -21,5 +25,10 @@ export class SuspectsListComponent implements OnInit {
     })
   }
 
-  openDialog() {}
+  openDialog(suspect) {
+    console.log(suspect);
+    this.dialog.open(MainComponent, {
+      width: '80%',
+    });
+  }
 }
