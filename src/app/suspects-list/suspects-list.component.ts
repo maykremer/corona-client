@@ -26,8 +26,6 @@ export class SuspectsListComponent implements OnInit {
 
   openDialog(suspect) {
     console.log(suspect);
-    this.dialog.open(MainComponent, {
-      width: '80%',
-    });
+    this.dialog.open(MainComponent, { width: '80%' , data: { suspect: suspect }});
   }
 }
