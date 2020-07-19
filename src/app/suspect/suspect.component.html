@@ -1,0 +1,62 @@
+<div class="main-body">
+  <h4 id="suspect-details">פרטי החייל</h4>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="תעודת זהות"
+      value="{{ suspectDetails.suspectIdentityNumber }}"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="שם פרטי"
+      value="{{ suspectDetails.suspectFirstName }}"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="שם משפחה"
+      value="{{ suspectDetails.suspectLastName }}"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>טלפון</mat-label>
+    <span matPrefix> &nbsp;</span>
+    <input
+      type="tel"
+      matInput
+      placeholder="050-111-1111"
+      value="{{ suspectDetails.suspectPhoneNumber }}"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="זמן האיכון"
+      value="{{ suspectDetails.suspectTimeOfPositioning }}"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="מיקום בזמן האיכון"
+      value="{{ suspectDetails.suspectPlaceOfPositioning }}"
+    />
+  </mat-form-field>
+  
+          <section class="example-section">
+            <mat-checkbox
+              class="example-margin"
+              [(ngModel)]="suspectDetails.suspectHasDeclaredInocense"
+              >מצהיר שלא היה במיקום האיכון</mat-checkbox
+            >
+          </section>
+</div>

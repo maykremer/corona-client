@@ -1,0 +1,6 @@
+<!-- <mat-card *ngFor="let suspect of suspects" >Simple card</mat-card> -->
+<h1 id= "main-title">רשימת חשודים בקורונה</h1>
+<mat-action-list>
+    <button *ngFor="let suspect of suspects" mat-list-item > {{suspect}} </button>
+  </mat-action-list>
+

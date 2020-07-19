@@ -1,0 +1,35 @@
+<h1 id="main-titel">מרפאה</h1>
+<div class="details">
+  <app-suspect></app-suspect>
+  <app-reporter></app-reporter>
+
+  <div class="clinic-details">
+    <h4 id="reporter-details"> נתונים</h4>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="החייל שהה בבסיס בזמן האיכון"
+        value="{{ ifSuspectWasInBaseDuringPas() }}"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="החייל קיבל הנחיה צבאית להיכנס לבידוד"
+        value=" {{ ifSuspectWasSentToConfinement() }}"
+      />
+    </mat-form-field>
+
+    <section class="example-section">
+      <mat-checkbox class="example-margin" [(ngModel)]="isClinicConfinement"
+        >אישור ליציאה מהבידוד</mat-checkbox
+      >
+    </section>
+
+    <mat-form-field>
+      <input matInput placeholder="הערות המרפאה" [(ngModel)]="clinicNotes" />
+    </mat-form-field>
+  </div>
+</div>

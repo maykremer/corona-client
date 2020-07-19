@@ -1,0 +1,13 @@
+.main-body{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    align-items: center;
+    height: 100%;
+}
+
+#suspect-details{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
