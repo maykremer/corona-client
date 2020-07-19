@@ -1,8 +1,6 @@
 <h1 id= "main-title">רשימת חשודים בקורונה</h1>
 <mat-action-list *ngFor="let suspect of suspects">
     <button mat-list-item (click)="openDialog(suspect)">
-      <!-- <h1>ת.ז: {{suspect.suspectIdentityNumber}}</h1> -->
-      <!-- <h1>{{suspect.suspectFirstName}}</h1> -->
         שם מלא: {{suspect.suspectLastName}}  {{suspect.suspectFirstName}}  תז: {{suspect.suspectIdentityNumber}}
     </button>
   </mat-action-list>

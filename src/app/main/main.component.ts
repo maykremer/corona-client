@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-main',
@@ -8,15 +10,18 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
   suspectWasInBaseDuringPas: boolean = true;
   suspectWasSentToConfinement: boolean = true; 
-  isClinicConfinement: boolean= false; // מרפאה ממלאה
-  wasExported: boolean;//
-  workFinished: boolean;//
-  clinicNotes: string=''; 
+  isClinicConfinement: boolean = false; 
+  wasExported: boolean;
+  workFinished: boolean;
+  clinicNotes: string = ''; 
   hamalNotes: string;
+  isColoneConfinement: boolean = true;
 
-  constructor() {}
+  constructor(@Inject(MAT_DIALOG_DATA) public SuspectData: any) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    
+  }
 
   ifSuspectWasInBaseDuringPas() {
     return this.suspectWasInBaseDuringPas ? 'כן' : 'לא';
