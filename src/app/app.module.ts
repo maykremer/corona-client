@@ -12,12 +12,7 @@ import { ReporterComponent } from './reporter/reporter.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { SuspectsListComponent } from './suspects-list/suspects-list.component';
-
-import {MatTableModule} from '@angular/material/table';
-import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
-import { MatTableExporterModule } from 'mat-table-exporter';
-
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
@@ -43,7 +38,6 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     MatListModule, 
     MatDialogModule, 
-    MatTableExporterModule,
     MatListModule,
     HttpClientModule
   ],
