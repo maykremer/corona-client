@@ -14,6 +14,8 @@ import { MatCardModule } from '@angular/material/card';
 import { SuspectsListComponent } from './suspects-list/suspects-list.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatTableExporterModule } from 'mat-table-exporter';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {MatListModule} from '@angular/material/list';
     MatCheckboxModule,
     MatCardModule,
     MatTableModule,
-    MatListModule
+    MatListModule, 
+    MatDialogModule, 
+    MatTableExporterModule
   ],
   providers: [],
   bootstrap: [AppComponent],
