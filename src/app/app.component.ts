@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from './userService/user.service'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Clinic Client';
+
+  constructor(private userService: UserService) { }
+
+  ngOnInit(): void {
+    this.userService.login();
+  }
 }
