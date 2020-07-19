@@ -7,8 +7,6 @@ import { MainComponent } from './main/main.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { SuspectComponent } from './suspect/suspect.component';
-import { ReporterComponent } from './reporter/reporter.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { SuspectsListComponent } from './suspects-list/suspects-list.component';
@@ -16,6 +14,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { HeaderComponent } from './header/header.component';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -23,9 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     MainComponent,
-    SuspectComponent,
-    ReporterComponent,
     SuspectsListComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule, 
     MatDialogModule, 
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],
