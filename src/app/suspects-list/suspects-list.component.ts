@@ -26,28 +26,17 @@ export class SuspectsListComponent implements OnInit {
     clinicInCharge: number;
   }> = [];
   data: any = [];
-
-  constructor(
-    public dialog: MatDialog,
-    public apiService: ApireqsService,
-    private excelService: ExcelService
-  ) {}
-
-  ngOnInit(): void {
-    this.apiService.getSuspectsByClinicId('3').subscribe((res: any) => {
-      res.forEach((element: any) => {
-        this.suspects.push(element);
-      });
-    });
-
-  suspects: any = [];
+  suspects1: any = [];
   ifHamal: boolean = false;
   HamalSuspects: any = [];
   clinicNum: string = "2";
 
-  constructor(public dialog: MatDialog, public apiService: ApireqsService) {}
+  constructor(
+    public dialog: MatDialog,
+    public apiService: ApireqsService,
+    private excelService: ExcelService) {}
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     if(this.clinicNum == "14"){
       this.ifHamal = true;
       this.GetAllSupHamal();
@@ -55,8 +44,9 @@ export class SuspectsListComponent implements OnInit {
     else{
       this.GetSupByClinic();
     } 
-
   }
+
+
 
   openDialog(suspect) {
     this.dialog.open(MainComponent, {
